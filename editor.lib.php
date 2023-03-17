@@ -18,6 +18,12 @@ class EditorLib
         return $Parsedown->text($string);
     }
 
+    public static function getObject($filename){
+        $fullpath = self::BASE_PATH . '/' . $filename;
+        $el = Yaml::parseFile($fullpath);
+        return json_decode(json_encode($el));
+    }
+
     public static function getObjects($filename)
     {
         $fullpath = self::BASE_PATH . '/' . $filename;
