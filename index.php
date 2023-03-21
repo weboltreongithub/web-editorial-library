@@ -2,11 +2,11 @@
 require_once 'vendor/autoload.php';
 require_once 'editor.lib.php';
 ?>
-    <h1>Yaml Array</h1>
+    <h1>Team</h1>
     <?php foreach ( EditorLib::getObjects('team.yml') as $aMember): ?>
         <div style="background-color: orange; padding: 15px">
-            <?php echo $aMember->name ?> with a <strong><?php echo $aMember->device ?></strong>
-            <img src="<?php echo $aMember->icon ?>"/>
+            <?php echo $aMember->name ?>
+            <a href="team-member.php?id=<?php echo $aMember->id ?>">Member detail</a>
         </div>
     <?php endforeach; ?>
 
