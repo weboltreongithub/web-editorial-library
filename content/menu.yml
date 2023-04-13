@@ -1,0 +1,15 @@
+-
+  link: /
+  name: Home
+-
+  link: /page.php?q=1
+  name: Page 1
+-
+  link: /page.php?q=2
+  name: Page 2
+-
+  link: /page.php?q=3
+  name: Page 3
+-
+  link: /page.php?q=4
+  name: Page 4

@@ -2,10 +2,7 @@
     require_once 'vendor/autoload.php';
     require_once 'editor.lib.php';
     $website      = EditorLib::getObject('website.yml');
-    $header       = EditorLib::getObject('header.yml');
-    $block1       = EditorLib::getObject('block-1.yml');
-    $block2       = EditorLib::getObject('block-2.yml');
-    $quotes       = EditorLib::getObjects('quotes.yml');
+    $q = (int) $_GET['q'];
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,77 +45,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   </div>
 </div>
 
-<!-- Header -->
-<header class="w3-container w3-red w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo"><?php echo $header->title ?></h1>
-  <p class="w3-xlarge"><?php echo $header->subtitle ?></p>
-</header>
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
-      <h1>
-        <?php echo $block1->title ?>
-      </h1>
-      <h5 class="w3-padding-32">
-        <?php echo EditorLib::wrapMarkdown( $block1->description ) ?>
-      </h5>
-
-      <p class="w3-text-grey">
-        <?php echo EditorLib::wrapMarkdown( $block1->text ) ?>
-      </p>
-    </div>
-
-    <div class="w3-third w3-center">
-      <i class="fa <?php echo $block1->icon ?> w3-padding-64 w3-text-red"></i>
+    <?php echo EditorLib::markdown_file('single-page-'. $q.'.md') ?>
     </div>
   </div>
 </div>
-
-<!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class="fa <?php echo $block2->icon ?> w3-padding-64 w3-text-red w3-margin-right"></i>
-    </div>
-
-    <div class="w3-twothird">
-      <h1><?php echo $block2->title ?></h1>
-      <h5 class="w3-padding-32">
-        <?php echo EditorLib::wrapMarkdown( $block2->description ) ?>
-      </h5>
-
-      <p class="w3-text-grey">
-        <?php echo EditorLib::wrapMarkdown( $block2->text ) ?>
-      </p>
-    </div>
-  </div>
-</div>
-
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge"> 
-      <?php
-        $arr = iterator_to_array($quotes, false);
-        $numOfQuotes = count($arr);  
-        $aQuote = $arr[rand(0, $numOfQuotes-1)];
-        echo '<i>' . EditorLib::wrapMarkdown( $aQuote->text ) . '</i><br/> -- ' . $aQuote->author ;
-      ?>
-    </h1>
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
-  <div class="w3-xlarge w3-padding-32">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
- </div>
- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
 
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
