@@ -5,7 +5,15 @@ use Symfony\Component\Yaml\Yaml;
 class EditorLib
 {
     const BASE_PATH = './content';
-    const VERSION = 1;
+    const VERSION = 2;
+
+    public static function  wrapImagePath($imagePath){
+        return self::BASE_PATH . $imagePath;
+    }
+
+    public static function  wrapMarkdown($text) {
+        return self::markdown( $text );
+    }
 
     public static function markdown_file($filename)
     {
