@@ -26,7 +26,7 @@ cmd
 docker run --rm -it -v %cd%:/usr/src/myapp -p 9988:8000 -w /usr/src/myapp php:8-cli-alpine3.17 sh
 ```
 
-## php docker Mac/Linux
+## php docker Mac and Linux
 ```shell
 docker run --rm -it -v "$PWD":/usr/src/myapp -p 9988:8000 -w /usr/src/myapp php:8-cli-alpine3.17 sh
 ```
@@ -50,6 +50,13 @@ Launch website here: http://localhost:9988
 
 
 ## 2. Install requirements
+
+Quick install:
+```shell
+php composer.phar install
+```
+
+First time manually install:
 ```bash
 php composer.phar require erusev/parsedown
 php composer.phar require symfony/yaml
