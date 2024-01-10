@@ -1,0 +1,21 @@
+
+
+    Home page
+    |
+    \_ header.yml
+    \_ menu.yml
+    \_ block-1.yml
+    \_ block-2.yml
+    \_ quotes.yml
+
+    Page 1
+    \_ single-page-1.yml
+
+    Page 2
+    \_ single-page-2.yml
+
+    Page 3
+    \_ single-page-3.yml
+
+    Page 4
+    \_ single-page-4.yml
