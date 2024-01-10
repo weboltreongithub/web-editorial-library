@@ -2,12 +2,12 @@
     require_once 'vendor/autoload.php';
     require_once 'editor.lib.php';
     $website      = EditorLib::getObject('website.yml');
-    $q = (int) $_GET['q'];
+    $q = $_GET['q'];
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
 <title>
-  <?php echo "Page ".$q ?>
+  <?php echo $q ?>
   - <?php echo $website->title ?>
 </title>
 <meta charset="UTF-8">
