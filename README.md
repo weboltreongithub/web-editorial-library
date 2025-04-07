@@ -3,6 +3,14 @@ Create a CMS website, in a little bit.
 
 # Local PHP server
 
+First step is to launch the PHP container, to work with PHP:
+
+Download the composer package into your folder.
+
+[Donwload composer](https://getcomposer.org/download/)
+
+
+
 ## php docker Windows
 Execute interactive php docker server by using `cmd.exe`:
 ```bash
@@ -16,13 +24,10 @@ docker run --rm -it -v "$PWD":/usr/src/myapp -p 9988:8000 -w /usr/src/myapp php:
 ```
 
 
-## Composer ⬇️ download
-[Donwload composer](https://getcomposer.org/download/)
-
-
 ## Install requirements
 
-Quick install:
+You are inside the docker container, try to launch composer.
+
 ```shell
 php composer.phar install
 ```
